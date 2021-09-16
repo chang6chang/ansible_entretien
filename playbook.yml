@@ -1,0 +1,31 @@
+---
+
+- name: Installation serveur web
+  hosts: localhost
+  # remote_user: root
+  vars:
+    users: wordly
+
+  tasks:
+
+    - name: Install nginx
+      apt: name=nginx state=latest
+
+    - name: Start nginx
+      become: yes
+      service: name=nginx state=started enabled=true
+
+    - name: Creation d'un utilisateur
+      user: name={{ users }} comment='Mon user' shell=/user/bin/bash
+
+    # - name: Ajout de la clef SSH
+    #   authorized_key: user={{ users }} key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+    - name: Envoi du fichier Hello Word
+      when: users is defined
+      copy: 
+        content: hello world !
+        dest: /home/wordly/hello.txt
+
+
+...
