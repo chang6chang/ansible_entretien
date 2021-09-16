@@ -1,4 +1,4 @@
-# ansible_entretien
+# Ansible_entretien
 Playbook Ansible qui installe et démarre un serveur nginx, sur un système Ubuntu ou Debian. Il crée un utilisateur wordly, et envoie un fichier "hello World" au niveau du home directory.
 Ce code ne fonctionne qu'en local. Pour l'exécuter sur une machine distante, il suffit de modifier le fichier host en lui indiquant la bonne adresse ip ainsi que les identifiants ssh de la machine.
 
