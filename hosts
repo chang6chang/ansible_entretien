@@ -1,5 +1,5 @@
 [web]
-18.191.106.205
+<adresse_ip>
 [web:vars]
-ansible_user=root
-ansible_ssh_private_key_file=/home/sidharta/Bureau/test.pem
+ansible_user=<user>
+ansible_ssh_private_key_file=<chemin_vers_la_cle_privee>
